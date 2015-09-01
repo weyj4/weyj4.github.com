@@ -7,16 +7,15 @@ relative_permalinks: true
 # Setup
 title:               Weyland Joyner
 tagline:             'Software Developer'
-description:         'So far all I have here is my resume, but check back soon.'
+description:         For more info, check out my resume.
 url:                 http://lanyon.getpoole.com
 baseurl:             ''
 paginate:            5
 
-# About/contact
-author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
-
 # Custom vars
 version:             1.0.0
+markdown:            kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
