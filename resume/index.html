@@ -1,3 +1,7 @@
+---
+layout: page2
+title: Resume
+---
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,15 +16,11 @@
       .relative {
   position: relative;
 }
-.title {
-  margin-top: 0px;
-  margin-bottom: 5px;
-}
 .clear-margin {
   margin: 0;
 }
 .space-top {
-  margin-top: 0px;
+  margin-top: 10px;
 }
 .space-right {
   margin-right: 10px;
@@ -69,13 +69,12 @@ body {
   background: #ffffff;
   border: 1px solid #e6e6e6;
   border-radius: 3px;
-  min-height: 40px;
-  padding: 5px;
-  page-break-inside: avoid;
+  min-height: 300px;
+  padding: 10px;
 }
 .card-nested {
   min-height: 0;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
   border-width: 1px 0 0 0;
 }
 .card-nested:before,
@@ -85,10 +84,6 @@ body {
 }
 .card-nested:after {
   clear: both;
-}
-.card-article {
-  border-width: 0px;
-  padding-top: 0px;
 }
 @media (max-width: 480px) {
   .card-nested {
@@ -111,7 +106,7 @@ body {
 }
 .background-details .detail {
   display: table;
-  padding: 0;
+  padding: 10px 0;
 }
 .background-details .detail .icon {
   min-width: 45px;
@@ -277,9 +272,6 @@ body {
   color: #357ebd;
   display: block;
 }
-a {
-  text-decoration: none !important;
-}
 .floating-nav ul li a:hover {
   color: #1f496e;
 }
@@ -328,7 +320,7 @@ a {
 }
 .contact-details .detail {
   display: table;
-  padding: 0;
+  padding: 10px 0;
 }
 .contact-details .detail .icon {
   padding: 0 10px;
@@ -628,24 +620,6 @@ a {
 .skill-info {
   margin-left: 10px;
 }
-.card-smaller {
-  background: #ffffff;
-  border: 1px solid #e6e6e6;
-  border-radius: 3px;
-  min-height: 100px;
-  padding: 10px 10px 0px 10px;
-  page-break-inside: avoid;
-  min-height: 0;
-  margin-bottom: 0px;
-  border-width: 1px 0 0 0;
-}
-  padding-bottom: none;
-}
-.profile-divider {
-  margin-top: 10px !important;
-  margin-bottom: 10px !important;
-  width: 50% !important;
-}
 @media (max-width: 480px) {
   .skill-info {
     margin-left: 20px;
@@ -680,8 +654,8 @@ a {
     float: left;
     width: 25%;
     min-height: 1px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
     padding: 0;
   }
   .floating-nav,
@@ -691,30 +665,87 @@ a {
   .pagebreak {
     page-break-before: always;
   }
-  .card {
-    page-break-inside: never;
-  }
 }
 
     </style>
   </head>
 
-  <body>
+  <body itemscope itemtype="http://schema.org/Person">
+    <script>
+      window.onload = function () {
+        var toggleFloatingMenu = function() {
+          $( '.js-floating-nav' ).toggleClass( 'is-visible' );
+          $( '.js-floating-nav-trigger' ).toggleClass( 'is-open' );
+        };
+
+        $( ".background-card" ).css( "min-height", window.screen.availHeight + "px" );
+        $( "[rel=tooltip]" ).tooltip();
+        $( '.js-floating-nav-trigger' ).on( 'click', function(e) {
+          e.preventDefault();
+          toggleFloatingMenu();
+        });
+        $( '.js-floating-nav a' ).on( 'click', toggleFloatingMenu );
+      }
+    </script>
     <div class="container-fluid">
       <div class="row main clearfix">
+        <a href="#" class="js-floating-nav-trigger floating-nav-trigger">
+          <i class="fa fa-bars"></i>
+          <span class="close-icon">&times;</span>
+        </a>
+        <nav class="floating-nav js-floating-nav">
+          <ul class="list-unstyled">
+            <li>
+              <a href="#work-experience">
+                <i class="fa fa-building"></i>
+                Work Experience
+              </a>
+            </li>
+            <li>
+              <a href="#skills">
+                <i class="fa fa-code"></i>
+                Skills
+              </a>
+            </li>
+            <li>
+              <a href="#education">
+                <i class="fa fa-mortar-board"></i>
+                Education
+              </a>
+            </li>
+              <li>
+                <a href="#awards">
+                  <i class="fa fa-trophy"></i>
+                  Awards
+                </a>
+              </li>
+              <li>
+                <a href="#publications">
+                  <i class="fa fa-book"></i>
+                  Publications
+                </a>
+              </li>
+          </ul>
+        </nav>
+
         <section class="col-md-3 card-wrapper profile-card-wrapper affix">
           <div class="card profile-card">
               <span class="profile-pic-container">
+                <div class="profile-pic">
+                  <img class="media-object img-circle center-block"  data-src="holder.js/100x100"
+                    alt="Weyland Joyner" src="./profile.jpg" itemprop="image">
+                </div>
+
                 <div class="name-and-profession">
-                  <h4 class="text-center text-bolder name" itemprop="name"> Weyland Joyner</h4>
+                  <h3 class="text-center text-bolder name" itemprop="name"> Weyland Joyner</h3>
                   <h5 class="text-muted text-center" itemprop="jobTitle">Software Developer</h5>
                 </div>
               </span>
-              <hr class="profile-divider" style="margin-top:5px;margin-bottom:5px;width:75%;">
+              <hr>
 
-              <div class="contact-details clearfix col-md-12">
+              <div class="contact-details clearfix">
 
-                  <div class="col-md-4">
+                  <div class="detail">
                     <span class="icon">
                       <i class="fa fa-lg fa-location-arrow"></i>
                     </span>
@@ -723,33 +754,46 @@ a {
                     </span>
                   </div>
 
-                  <div class="col-md-4">
+                  <div class="detail">
                     <span class="icon">
                       <i class="fa fa-lg fa-phone"></i>
                     </span>
 
-                    <span class="info">
+                    <span class="info" itemprop="telephone">
                       (757) 816-9155
                     </span>
                   </div>
 
-                  <div class="col-md-4">
+                  <div class="detail">
                     <span class="icon">
                       <i class="fa fa-lg fa-envelope"></i>
                     </span>
 
                     <span class="info">
-                      weylandjoyner4@gmail.com
+                      <a href="/cdn-cgi/l/email-protection#483f2d312429262c222731262d3a7c082f25292124662b2725" class="link-disguise" itemprop="email"><span class="__cf_email__" data-cfemail="5720322e3b3639333d382e3932256317303a363e3b7934383a">[email&#160;protected]</span><script cf-hash='f9e31' type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/* ]]> */</script></a>
                     </span>
                   </div>
 
 
+              </div>
+
+              <hr>
+
+              <div class="social-links text-center">
+                  <a class="fa fa-linkedin fa-2x social-link link-linkedin"
+                       href="https://linkedin.com/in/weylandjoyner" target="_blank"></a>
+                  <a class="fa fa-github fa-2x social-link link-github"
+                       href="//github.com/weyj4" target="_blank"></a>
               </div>
           </div>
         </section>
 
         <section class="col-md-9 card-wrapper pull-right">
           <div class="card background-card">
+            <h4 class="text-uppercase text-bolder">Background</h4>
+            <hr>
+
             <div class="background-details">
 
               <div class="detail" id="work-experience">
@@ -766,8 +810,10 @@ a {
                       <li class="card card-nested clearfix">
                         <div class="content">
                           <p class="clear-margin relative">
+                              <i class="fa fa-circle current-event"
+                                 rel="tooltip" title="Currently Working" data-placement="left"></i>
                             <strong>Software Engineering Intern</strong>,&nbsp;
-                              <a>Prometheus Research, LLC</a>
+                              <a href="http://prometheusresearch.com/"  target="_blank">Prometheus Research, LLC</a>
                           </p>
                           <p class="text-muted">
                             <small>
@@ -778,16 +824,16 @@ a {
 
                                 <span>
                                   <i class="fa fa-clock-o icon-left"></i>
-                                  6 months
+                                  4 months
                                 </span>
                             </small>
                           </p>
-                          <p>I&#x27;m an engineering intern at Prometheus Research, a company that builds data management solutions for the biomedical research community. My accomplishments there include:</p>       
+                          <p>I&#x27;m an engineering intern at Prometheus Research, a company that builds data management solutions for the biomedical research community. My accomplishments there include:</p>
                             <ul>
-                                <li> Wrote about 30% of the ReactJS frontend for a product that was the first of its kind for the company </li>       
-                                <li> Contributed to open source by diagnosing and reporting bugs </li>
-                                <li> Created backend data management utilities and migration scripts with Python </li>
-                                <li> Learned and helped document Prometheus’ custom RexDB stack (Postgres, HTSQL, Python, ReactJS, etc) </li>
+                                <li> Wrote about 30% of the ReactJS frontend for a product that was the first of its kind for the company. </li>
+                                <li> Contributed to open source by diagnosing and reporting bugs. </li>
+                                <li> Created backend data management utilities and migration scripts with Python. </li>
+                                <li> Learned and helped document Prometheus’ custom RexDB stack (Postgres, HTSQL, Python, ReactJS, etc). </li>
                             </ul>
                         </div>
                       </li>
@@ -795,7 +841,7 @@ a {
                         <div class="content">
                           <p class="clear-margin relative">
                             <strong>Rails Developer</strong>,&nbsp;
-                              <a>StartupGrid</a>
+                              <a href="http://github.com/StartupGridMidd"  target="_blank">StartupGrid</a>
                           </p>
                           <p class="text-muted">
                             <small>
@@ -806,11 +852,11 @@ a {
 
                                 <span>
                                   <i class="fa fa-clock-o icon-left"></i>
-                                  3 months
+                                  1 month
                                 </span>
                             </small>
                           </p>
-                          <p>StartupGrid is an early stage online resource providing advice, expertise, and instruction from top thought leaders in the startup and venture capital industries.</p>       
+                          <p>StartupGrid is an early stage online resource providing advice, expertise, and instruction from top thought leaders in the startup and venture capital industries.</p>
                             <ul>
                                 <li> Built Rails/Backbone app as part of a 5-person undergrad engineering team </li>
                                 <li> Along with core team members and founders, participated in design/analysis discussions </li>
@@ -822,7 +868,7 @@ a {
                         <div class="content">
                           <p class="clear-margin relative">
                             <strong>Project and Design Manager</strong>,&nbsp;
-                              <a>Middlebury College Solar Decathlon</a>
+                              <a href="http://www.solardecathlon.gov/past/2013/team_middlebury.html"  target="_blank">Middlebury College Solar Decathlon</a>
                           </p>
                           <p class="text-muted">
                             <small>
@@ -833,7 +879,7 @@ a {
 
                                 <span>
                                   <i class="fa fa-clock-o icon-left"></i>
-                                  6 months
+                                  4 months
                                 </span>
                             </small>
                           </p>
@@ -849,7 +895,7 @@ a {
                         <div class="content">
                           <p class="clear-margin relative">
                             <strong>Design/Fabrication Intern</strong>,&nbsp;
-                              <a>Nop&#x27;s Metalworks</a>
+                              <a href="http://www.nopsmetalworks.com/"  target="_blank">Nop&#x27;s Metalworks</a>
                           </p>
                           <p class="text-muted">
                             <small>
@@ -860,7 +906,7 @@ a {
 
                                 <span>
                                   <i class="fa fa-clock-o icon-left"></i>
-                                  5 months
+                                  4 months
                                 </span>
                             </small>
                           </p>
@@ -953,12 +999,15 @@ a {
                             </p>
                             GPA: 3.69 (Magna cum Laude)<br />
                             SAT: 2370/2400
+                            <div class="space-top labels">
+                            </div>
                           </div>
                         </li>
                     </ul>
                   </div>
                 </div>
               </div>
+
                 <div class="detail" id="awards">
                   <div class="icon">
                     <i class="fa fa-lg fa-trophy"></i>
@@ -990,6 +1039,7 @@ a {
                   </div>
                 </div>
 
+
                 <div class="detail" id="publications">
                   <div class="icon">
                     <i class="fa fa-lg fa-book"></i>
@@ -1002,11 +1052,11 @@ a {
 
                     <div class="content">
                       <ul class="list-unstyled">
-                          <li class="card card-nested card-smaller">
+                          <li class="card card-nested">
                             <div class="content">
                               <p class="clear-margin">
                                 <strong>
-                                    <a>Brook Trout Fishing</a>
+                                    <a href="http://vtsports.com/in-the-dog-days-of-summer-head-for-the-hills-for-small-stream-brook-trout"  target="_blank">Brook Trout Fishing</a>
                                 </strong>,&nbsp;
                                 Vermont Sports
                               </p>
@@ -1018,11 +1068,11 @@ a {
                               <p class="clear-margin"></p>
                             </div>
                           </li>
-                          <li class="card card-nested card-smaller">
+                          <li class="card card-nested">
                             <div class="content">
                               <p class="clear-margin">
                                 <strong>
-                                    <a>Carp on the Fly</a>
+                                    <a href="http://vtsports.com/carp-on-the-fly"  target="_blank">Carp on the Fly</a>
                                 </strong>,&nbsp;
                                 Vermont Sports
                               </p>
@@ -1062,7 +1112,7 @@ a {
                                   March, 2015
                                 </small>
                               </p>
-                              <p class="clear-margin">Alongside a faculty member, led a group of high school seniors from my alma mater on a 2-week service trip in KwaZulu-Natal, South Africa, and Lesotho. Taught classes and did repair work at underserved rural primary schools.</p>
+                              <p class="clear-margin">Along with a faculty member, led a group of high school seniors from my alma mater on a 2-week service trip in KwaZulu-Natal, South Africa, and Lesotho. Taught classes and did repair work at underserved rural primary schools.</p>
                             </div>
                           </li>
                       </ul>
@@ -1080,5 +1130,10 @@ a {
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.js"></script>
+  <script type="text/javascript">
+/* <![CDATA[ */
+(function(){try{var s,a,i,j,r,c,l=document.getElementsByTagName("a"),t=document.createElement("textarea");for(i=0;l.length-i;i++){try{a=l[i].getAttribute("href");if(a&&a.indexOf("/cdn-cgi/l/email-protection") > -1  && (a.length > 28)){s='';j=27+ 1 + a.indexOf("/cdn-cgi/l/email-protection");if (a.length > j) {r=parseInt(a.substr(j,2),16);for(j+=2;a.length>j&&a.substr(j,1)!='X';j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}j+=1;s+=a.substr(j,a.length-j);}t.innerHTML=s.replace(/</g,"&lt;").replace(/>/g,"&gt;");l[i].setAttribute("href","mailto:"+t.value);}}catch(e){}}}catch(e){}})();
+/* ]]> */
+</script>
 </body>
 </html>
