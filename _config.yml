@@ -2,7 +2,6 @@
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
-relative_permalinks: true
 
 # Setup
 title:               Weyland Joyner
@@ -15,6 +14,7 @@ paginate:            5
 # Custom vars
 version:             1.0.0
 markdown:            kramdown
+plugins:             [jekyll-paginate]
 
 kramdown:
   input: GFM
