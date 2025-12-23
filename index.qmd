@@ -1,0 +1,29 @@
+---
+title: "A Minimal Quarto Demo"
+---
+
+## Why this exists
+
+This is a deliberately small Quarto site to demonstrate:
+
+- Literate scientific writing
+- Embedded computation
+- Static publishing via GitHub Pages
+
+---
+
+## A tiny computation
+
+Below is a Python block that runs during render.
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 2*np.pi, 200)
+y = np.sin(x)
+
+plt.figure(figsize=(6, 3))
+plt.plot(x, y)
+plt.title("Sine wave")
+plt.show()

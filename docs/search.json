@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "A Minimal Quarto Demo",
+    "section": "",
+    "text": "This is a deliberately small Quarto site to demonstrate:\n\nLiterate scientific writing\nEmbedded computation\nStatic publishing via GitHub Pages"
+  },
+  {
+    "objectID": "index.html#why-this-exists",
+    "href": "index.html#why-this-exists",
+    "title": "A Minimal Quarto Demo",
+    "section": "",
+    "text": "This is a deliberately small Quarto site to demonstrate:\n\nLiterate scientific writing\nEmbedded computation\nStatic publishing via GitHub Pages"
+  },
+  {
+    "objectID": "index.html#a-tiny-computation",
+    "href": "index.html#a-tiny-computation",
+    "title": "A Minimal Quarto Demo",
+    "section": "A tiny computation",
+    "text": "A tiny computation\nBelow is a Python block that runs during render.\nimport numpy as np import matplotlib.pyplot as plt\nx = np.linspace(0, 2*np.pi, 200) y = np.sin(x)\nplt.figure(figsize=(6, 3)) plt.plot(x, y) plt.title(“Sine wave”) plt.show()"
+  }
+]
