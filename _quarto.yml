@@ -1,13 +1,19 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - image_playground
 
 website:
   title: "Weyland Joyner"
   navbar:
     left:
-      - href: index.qmd
+      - href: /
         text: Home
+      - href: /paper_reproductions/
+        text: Paper Reproductions
+      - href: /image_playground/
+        text: Image Playground
 
 format:
   html:
